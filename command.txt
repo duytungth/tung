@@ -1,0 +1,398 @@
+--- build UAT
+pupet agent -t
+https://jenkins.vndirect.com.vn/job/doffice-report.snapshot
+
+--- docker
+docker ps -a
+docker start [ID]
+
+----
+netstat -ano | findstr : 'port'
+taskkill /F /PID 25920
+netstat -lnpt |grep java
+kill -9
+ps aux| grep java
+ps -ef | grep "pid" //lệnh check process đang chạy
+dmesg -T| grep -E -i 'killed process'
+
+iptables -nL
+iptables -F
+sudo vim /etc/sysconfig/iptables
+sudo systemctl reload iptables
+
+https://accounts-uat.vndirect.com.vn/v3/user-account?user-id=2225709163371124&page-number=1
+
+--- copy to server
+scp -r application.yml root@10.210.39.80:/opt/pmsapi/config
+--- nash port
+ssh tung.leduy@10.26.0.199 -L 3307:10.26.53.24:3306
+123456
+df -H
+du -hs * | sort -h --> check size of file or folder
+
+cat > /home/document/newpath : tạo 1 empty file
+
+--spring.config.location=classpath:/(để ăn tất cả file properties),file:./config/application.yml(fix chính xác 1 file)
+
+
+sale.test
+Hf@1234
+
+product HF vnds@1234
+dung.nguyen
+dung2712
+-----
+zgrep 'null' 2022-10-08-ppr-api*.log.gz
+
+
+
+SET GLOBAL max_connections = 1024;
+
+---triển khai----
+khi có nhánh git mới release, jenkin sẽ hiểu là version code mới. CÒn nếu là tên git cũ, jenkin sẽ hiểu là nhánh cũ(nếu nhánh cũ build lỗi, commid amend, jenkin sẽ hiểu là lỗi)
+
+còn lũy kế là bậc nào ăn all bậc đấy CLUSTER-Lũy kế
+
+
+Grant 12
+DEP000006
+VND_STAFF_TITLE
+EMPLOYEE
+checker: biz_checker3
+pass: Abcd1234
+
+careby:
+{
+	"userName": "coco586",
+	"password": "12345678"
+}
+
+ipa\pms.test2
+{
+	"userName": "ipa\\pms.test2",
+	"password": "abcd@1234"
+}
+
+customer
+{
+	"userName": "coco500",
+	"password": "12345678"
+}
+
+MYSQL:
+mysql -h 10.200.31.182 -u pms -p pms_db
+
+PSQL - Notification:
+userName: dsb_notification
+pass: dsb@12345678
+
+psql -h 10.202.0.5 -p 5432 -d package_product -U ppruser
+
+// get thông tin phê duyệt phí
+curl -X GET 'https://vndid-int-api.vndirect.com.vn/v3/search/membership?query=domain%253A%2528VND_STAFF_JD+OR+VND_STAFF_TITLE%2529+AND+groupName%253A%2528DEP000014%2529+AND+membershipType%253A%2528BROKER+OR+MANAGER%2529&domain&filter-query&group-field&sort-field&sort-type=DESC&page-number=1&page-size=25';
+
+ curl -X  GET 'https://vndid-int-api.vndirect.com.vn/v3/search-user?source=ipa&query=boCustomerId_s%3A0001480234'
+
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/search-user?query=customerId%3A0001897390
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?user-id=20451212560704 --> KH or SALE
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?custody-id=021C737523
+ -->KH
+
+
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?username=trunglvb10
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?username=ipa%5C%5Cvandt--> KH or SALE
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?account-no=0001730874    -->KH
+curl -X GET --url 'https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cnhung.vu3';
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cchi.dinhmai
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user/get-by-phone?user-phone=0886012602
+
+
+curl -X GET  https://accounts-uat.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cvandt 
+curl -X GET  https://accounts-uat.vndirect.com.vn/v3/user-account?username=ipa\a.tpmg
+https://accounts-uat.vndirect.com.vn/v3/user/profile/get/2227111023233924
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?account-no=0101456678
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account?customer-id=1168720110
+
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?user-id=20451212560704
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=binhminhtinhyeu8385@gmail.com
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?customerId=0001284030
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/search/membership?query=domain%253A%2528VND_STAFF_JD+OR+VND_STAFF_TITLE%2529+AND+groupName%253A%2528DEP00014%2529&domain&filter-query&group-field&sort-field&sort-type=DESC&page-number=1&page-size=25
+
+curl --request POST --url https://ecuatv2api.vndirect.com.vn  --data '{ "Username": "ec.ppr_dev", "Password": "vnds@1234" }'
+ curl -X POST  https://icontract-api.vndirect.com.vn//api/ProfileVND/Login --data '{ "Username":"ppr_admin", "Password": "Vnds@022AAPSSERVICE"}';
+
+
+https://accounts-uat.vndirect.com.vn/v3/user-account?customer-id=0001676499
+https://accounts-uat.vndirect.com.vn/v3/user-account?account-no=0001624378
+curl -X GET https://accounts-uat.vndirect.com.vn/v3/search-user?query=customerId%3A1101002211
+
+sale.manager.HF/Hf@1234
+
+
+----DOR:
+xóa đaily-derivetive trước khi import
+reload collection:
+http://10.210.11.31:8500/solr/admin/collections?action=RELOAD&name=daily-derivative-revenue-v2&wt=xml
+tính revenue:
+http://dor.vndirect.com.vn/internal/calculation-revenue?dateString=&commissionCalculation=true
+
+Maven:
+nếu bị lỗi không download đc lib, thì lib đó ở trong các depency con không có trên nexus
+
+
+
+update package_product_management set status = 'EXPIRE'
+                                  where id in (select p.id from package_product_management p
+                                                                                       inner join e_contract ec on p.id = ec.ref_id
+                                                                     where ec.type = 'PRODUCT' AND p.status = 'PENDING' AND ec.status = 'EXPIRE');
+
+
+
+
++ echo 'uer= SCM Change -  mail=  - id = scmChange number=42 job_name=dsb-gateway-fo.snapshot'
+uer= SCM Change -  mail=  - id = scmChange number=42 job_name=dsb-gateway-fo.snapshot
++ touch /opt/Lapscript/uat/jobbuild/42:dsb-gateway-fo.snapshot:scmChange
+
+
+echo "uer= $BUILD_USER -  mail= $BUILD_USER_EMAIL - id = $BUILD_USER_ID number=$BUILD_NUMBER job_name=$JOB_NAME"
+touch /opt/Lapscript/uat/jobbuild/$BUILD_NUMBER:$JOB_NAME:$BUILD_USER_ID
+
+
+
+
+
+curl -X PATCH http://10.210.39.133:8600/internal/v2/contracts/status%20-%20Request%20Body:%20%7B%22profileGUID%22:%22e1d544cf-4825-4906-8f90-591e8651ce68%22,%22requestId%22:3098,%22profileStatusId%22:99,%22complete%22:false,%22reject%22:false,%22terminalStatus%22:true,%22new%22:false,%22waitingSign%22:false,%22expired%22:true,%22listSigner%22:[%7B%22signerCode%22:%22VND%22,%22statusId%22:0%7D,%7B%22signerCode%22:%22NhaDauTu%22,%22statusId%22:1%7D],%22listTextSigner%22:[%7B%22textCode%22:%22DMAGIN1%22,%22signerCode%22:%22VND%22,%22statusId%22:0,%22waitingSign%22:false%7D,%7B%22textCode%22:%22DMAGIN1%22,%22signerCode%22:%22NhaDauTu%22,%22statusId%22:1,%22waitingSign%22:true%7D,%7B%22textCode%22:%22DMARGIN%22,%22signerCode%22:%22VND%22,%22statusId%22:0,%22waitingSign%22:false%7D,%7B%22textCode%22:%22DMARGIN%22,%22signerCode%22:%22NhaDauTu%22,%22statusId%22:1,%22waitingSign%22:true%7D]%7D
+
+RELOAD collection solr:
+http://10.210.11.21:8500/solr/admin/collections?action=RELOAD&name=monthly-allowance&wt=xml
+
+DOR
+Vnds@2022
+
+Redis:
+./redis-cli -h 10.210.7.2
+
+
+curl --request GET \ --url 'https://vndid-int-api.vndirect.com.vn/search/membership?query=domain%3A(VND_STAFF_TITLE%20CUSTOMER_RELATIONSHIP%20VND_STAFF_JD%20VND_STAFF_PERMISSION%20SALE_SERVICE%20IVND-SAS)%20AND%20userName%3Aipa%5C%5Cadmin.system&page-number=1&page-size=10000'
+
+tài khoản chị Vân test PRODUCTION: 2135205373646569
+
+./solr zk downconfig -n daily-sale-report -d /opt/solr/server/solr/configsets/daily-sale-report-analytic
+sudo ./solr zk upconfig -n daily-market-trading-value -d /opt/dor/daily-market-trading-value / -z 10.200.25.3:2181/solr
+
+uat
+
+sonar.projectKey=DOR_UAT
+sonar.java.binaries=${workspace}/**/target/classes/vn/com/vndirect/report
+sonar.binaries=${workspace}/.sonar
+sonar.language=java
+
+stagging product:
+sonar.projectKey=DOR_UAT
+sonar.java.binaries=${workspace}/**/target/classes
+sonar.binaries=${workspace}/.sonar
+sonar.language=java
+
+<field _nest_path_" type="_nest_path_ -> hiện child document
+
+Battle for Sevastopol
+
+Lũy kế là nằm rank nào ăn HH rank đó
+
+ AME -> bang stock
+
+Type: Mysql
+Ip: 10.26.53.224
+Port: 3306
+username/password: root/root!224uhB
+
+select * from ppr_log where request_data ->> 'id'='43718';
+
+CREATE VIEW v_ppr_request_data_extracted AS
+SELECT p.id, p.status, cast(p.request_data ->> 'id' as int8) as ppr_id,
+       cast(p.request_data -> 'swmRegistration' ->> 'id' as int8) as swm_reg_id, p.type,
+       p.time_to_wakeup
+FROM ppr_log p;
+
+Encapsulation - chỉ bên trong Object mới có thể thay đổi trạng thái (State) của chính nó.
+Vim : \[
+
+admin.system/ admin@)@#20053157
+
+ftp-server:
+host: 10.26.53.18
+port: 21
+username: ftpuser
+password: vnds@1234
+
+sản phẩm phái sinh PRO000002
+beneficiary
+role: client-refer trong bang client-refer
+
+chưa basic authen -> lỗi 401
+call api chưa có -> lỗi 401
+Hibernate 5 removed the ability to detect rollback in it's interceptor
+
+select *  from package_registration p  where p.status = 'PENDING' AND p.created_date between '2023-05-26' and '2023-06-02' AND  p
+.new_care_by_info ->> 'departments'::text like '%DEP000017%';
+
+~ = root
+/ = all
+
+JsonMapper write object ra dạng json -> sau đó wrap vào string -> có escape để giữ dạng string trong json
+
+
+call qua gateway đc vì client call qua gateway để request sau đó request route sang các ip service tương ứng
+call = ip ko đc vì chặn
+call = domain đc vì domain là public ra ngoài
+
+gateway ko có firewall
+
+
+daily_revenue_client_refer : bảng cho ctv(weal_partner)
+daily_revenue_client_refer: bảng cho broker()
+
+Default locations for application.properties files
+
+About application.properties files (and variant), by default Spring loads them and add their properties in the environment from these in the following order :
+
+A /config subdirectory of the current directory
+
+The current directory
+
+A classpath /config package
+
+The classpath root
+
+The higher priorities are so literally :
+classpath:/,classpath:/config/,file:./,file:./config/.
+
+customerType: loại nhà đầu tư: cá nhân trong nước SEG000001, tổ chức trong nước ... 
+segmentation: loại hình nhà đầu tư, phân khúc: ndt chuyên nghiêp SEG0000024
+
+headers = {"x-username=long", "via=${master-trader.via}"}
+
+        "fromDate":1672506000000,
+        "toDate":1680195600000,
+
+ObjectMapper mapper = new ObjectMapper();
+// example JsonNode
+JsonNode arrayNode = mapper.createArrayNode().add("one").add("two");
+// acquire reader for the right type
+ObjectReader reader = mapper.readerFor(new TypeReference<List<String>>() {
+});
+// use it
+List<String> list = reader.readValue(arrayNode);
+
+
+
+
+            NSR_trading             realTradingFee
+	    trading_fee             tradingFee
+	    match_value             matchValue
+            interest_amt            interestRevenue
+	    cost_price              interestCost
+	    interest_NR             interestNetRevenue
+	    avg_nsr_trading_DIY     avgNSRTradingDIY_l
+	
+	    NSR_incremental        NSRIncremental_l
+
+user_oa
+Vnds@1234#oa
+
+
+select ppm.status, count(ppm.id) from package_product_management ppm inner join e_contract ec on ppm.id = ec.ref_id where ec.status not in ('EXPIRE') and ec.url_page_sign l
+ike '%econtract%' and ppm.status not in ('COMPLETED', 'CANCELLED', 'CUSTOMER_CANCELLED', 'E_CONTRACT_EXPIRED', 'EXPIRE', 'EXPIRED') and ppm.created_date < '2023-08-11 00:00:00' and ppm.id no
+t in (select ppm.id from package_product_management  ppm inner join e_contract ec on ppm.id = ec.ref_id inner join dpm_setup_registration dpm on ppm.id = dpm.ref_id  where ec.url_page_sign l
+ike '%econtract%' and ppm.status not in ('COMPLETED', 'CANCELLED', 'CUSTOMER_CANCELLED', 'E_CONTRACT_EXPIRED', 'EXPIRE', 'EXPIRED') and ppm.created_date < '2023-08-11 00:00:00' and dpm.type 
+= 'UPLOAD_CONTRACT') group by ppm.status;
+
+FDEV-BANDIAVIET-DB-10.210.39.218
+
+
+http_referer:/https.*jn04/
+
+try {
+
+throw new RuntimeException()
+
+} finally {
+ return;
+}
+
+=>> code trên không throw Ex, vì finally return
+
+find / -type d -iname *postgres*
+
+
+curl -X POST http://10.202.1.5:8080/internal/oa-system/channels/operator-client/package-registrations -H "Content-Type: application/json"  --data '{"packageCode":"SER000002","careByUserId":null,"saleUserId":null,"customerUserId":2321107220379246,"core":"BO","dealFee":false,"coreFeeRate":null,"creatorUserId":2321107220379246,"customerId":"0001897390","custodyId":"021C803058","careBySupplier":"CUSTOMER","subAccount":"0001705465","wrapAccountNo":"000189739001","receiveNotifyStatusChange":true}' -u 'user_oa:Vnds@1234#oa'
+
+
+Khách hàng đã đăng ký Dmargin cơ bản nên khi nhân viên nghiệp vụ vào màn tạo yêu cầu đăng ký cho KH không thấy account hợp lệ là đúng theo logic
+
+KH đăng ký D-margin trước khi có luồng đăng ký margin online trên app nên request đăng ký không có trên hệ thống PPR → hệ thống PPR không nhận diện được case để tự động update Dmargin của KH từ cơ bản thành nâng cao
+
+Với case này cần thời gian bổ sung logic hệ thống và chưa thể xử lý ngay thời điểm hiện tại
+
+=> Nhờ bộ phận nghiệp vụ cài đặt tay case này cho KH để KH có thể sử dụng Dmargin nâng cao
+
+supplier.get
+function.get
+
+bdv-bo-uat.homefood.com.vn
+bdv-erp-uat.homefood.com.vn
+bdv-gateway-uat.homefood.com.vn 
+bdv-discovery-uat.homefood.com.vn
+
+jsonb_exists_any(to_jsonb(receive_statuses), array['COMPLETED']);
+
+receive_statuses::tojsonb ? 'COMPLETED';
+
+DB PPR: 
+update dpm_setup_registration set type = 'PRODUCT_OPENING_ACCOUNT', status = 'PENDING' where id = 147319;
+
+ kafka-console-producer.sh --help
+10.200.32.193:9092
+vào dir: /opt/kafka.../bin
+command: ./kafka-console-producer.sh --broker-list 10.200.32.193:9092  --topic dpm_out_event
+
+{"eventType":"service-product-register-response","body":"{\"requestId\":\"147319\",\"productCode\":\"02001001\",\"productName\":\"D-Margin\",\"status\":\"CONTRACTIVE\",\"valueDate\":\"2023-08-01\",\"maker\":\"ipa\\\\hong.vu\"}","partition":0,"offset":0}
+
+
+mysql
+UPDATE sas_organization_db.store_config
+SET importable_store = JSON_ARRAY_APPEND(importable_store, '$', 29)
+WHERE store_id IN (13);
+
+2 service call nhau tính đến 1 trong 2 bị down
+
+- lỗi PPR:
+lỗi bất đồng bộ khi nhận message DPM bắn về nhưng chưa update xong
+lỗi jd, title của careby không hợp lệ, thử thiếu
+thiếu carebyGroupId lúc tạo xong DPM rồi gửi message
+gửi msg lúc 3h06 dpm bắn trả lúc 3h40
+thay đổi logic kh upload hồ sơ đky margin nâng cao
+
+find check bảng stock, tính sum period-info
+
+docker system prune -a
+
+docker exec -it <mycontainer> bash
+systemctl stop puppet
+/var/lib/ ==> dir chứa docker images
+docker run --detach --name=bdv-auth-1.8.7 --network host --volume=$PWD/pref:/root/.java/.userPrefs/ --volume=$PWD/config:/opt/config --volume=$PWD/data:/opt/data --volume=$PWD/logs:/opt/logs hub.ivnd.com.vn/bdv-auth-service:1.8.7 -e TZ=Asia/Ho_Chi_Minh
+docker run --detach --name=sas-notification-service-1.8.8   --network host --volume=$PWD/pref:/root/.java/.userPrefs/ --volume=$PWD/config:/opt/config --volume=$PWD/data:/opt/data --volume=$PWD/logs:/opt/logs hub.ivnd.com.vn/sas-notification-service:1.8.8 -v=$PWD/timezone:/etc/timezone
+/etc/timezone
+
+vào thư mục này /usr/local/bin
+xóa file
+rm -f docker-run-sas-product-service-1.19.0-st*
+sau đó xóa docker đang chạy của ver cũ
+docker rm -f 7181524dc0a8
+thế là xong
+
+bk db path: C:\Users\tung.leduy\db\db2
+nginx proxy có IP là 10.200.208.53/202.160.124.198
+jira xin thông firewall https://vndirect.atlassian.net/servicedesk/customer/portal/3/ITSUPPORT-17558?created=true
+10.26.53.113 -- cart
+10.26.53.125 -- inventory
