@@ -93,37 +93,37 @@ curl -X GET 'https://vndid-int-api.vndirect.com.vn/v3/search/membership?query=do
 
  curl -X  GET 'https://vndid-int-api.vndirect.com.vn/v3/search-user?source=ipa&query=boCustomerId_s%3A0001480234'
 
-curl -X GET https://vndid-int-api.vndirect.com.vn/v3/search-user?query=customerId%3A0001897390
-curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?user-id=20451212560704 --> KH or SALE
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/search-user?query=customerId%3A0001501910
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?user-id=2229310290317005 --> KH or SALE
 curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?custody-id=021C737523
  -->KH
 
 
 curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?username=trunglvb10
 curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?username=ipa%5C%5Cvandt--> KH or SALE
-curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?account-no=0001730874    -->KH
-curl -X GET --url 'https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cnhung.vu3';
-curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cchi.dinhmai
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?account-no=0001737058    -->KH
+curl -X GET --url 'https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Choang.nguyenhuy3';
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cminh.hoanggia
 curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user/get-by-phone?user-phone=0886012602
 
 
 curl -X GET  https://accounts-uat.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Cvandt 
 curl -X GET  https://accounts-uat.vndirect.com.vn/v3/user-account?username=ipa\a.tpmg
 https://accounts-uat.vndirect.com.vn/v3/user/profile/get/2227111023233924
-curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?account-no=0101456678
-curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account?customer-id=1168720110
+curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account?account-no=0002006689
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account?customer-id=0001014378
 
 curl -X GET  https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?user-id=20451212560704
-curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=binhminhtinhyeu8385@gmail.com
+curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?username=ipa%5C%5Ctu.doanduy
 curl -X GET https://vndid-int-api.vndirect.com.vn/v3/user-account/jd?customerId=0001284030
 curl -X GET https://vndid-int-api.vndirect.com.vn/v3/search/membership?query=domain%253A%2528VND_STAFF_JD+OR+VND_STAFF_TITLE%2529+AND+groupName%253A%2528DEP00014%2529&domain&filter-query&group-field&sort-field&sort-type=DESC&page-number=1&page-size=25
 
 curl --request POST --url https://ecuatv2api.vndirect.com.vn  --data '{ "Username": "ec.ppr_dev", "Password": "vnds@1234" }'
  curl -X POST  https://icontract-api.vndirect.com.vn//api/ProfileVND/Login --data '{ "Username":"ppr_admin", "Password": "Vnds@022AAPSSERVICE"}';
 
-
-https://accounts-uat.vndirect.com.vn/v3/user-account?customer-id=0001676499
-https://accounts-uat.vndirect.com.vn/v3/user-account?account-no=0001624378
+https://accounts-uat.vndirect.com.vn/v3/user-account/jd?username=pms.test1
+https://accounts-uat.vndirect.com.vn/v3/user-account?customer-id=0001673189
+curl -X GET https://accounts-uat.vndirect.com.vn/v3/user-account?account-no=1101002832
 curl -X GET https://accounts-uat.vndirect.com.vn/v3/search-user?query=customerId%3A1101002211
 
 sale.manager.HF/Hf@1234
@@ -381,8 +381,27 @@ docker exec -it <mycontainer> bash
 systemctl stop puppet
 /var/lib/ ==> dir chứa docker images
 docker run --detach --name=bdv-auth-1.8.7 --network host --volume=$PWD/pref:/root/.java/.userPrefs/ --volume=$PWD/config:/opt/config --volume=$PWD/data:/opt/data --volume=$PWD/logs:/opt/logs hub.ivnd.com.vn/bdv-auth-service:1.8.7 -e TZ=Asia/Ho_Chi_Minh
-docker run --detach --name=sas-notification-service-1.8.8   --network host --volume=$PWD/pref:/root/.java/.userPrefs/ --volume=$PWD/config:/opt/config --volume=$PWD/data:/opt/data --volume=$PWD/logs:/opt/logs hub.ivnd.com.vn/sas-notification-service:1.8.8 -v=$PWD/timezone:/etc/timezone
+docker run --detach --name=sas-reservation-service-1.29.1   --network host --volume=$PWD/pref:/root/.java/.userPrefs/ --volume=$PWD/config:/opt/config --volume=$PWD/data:/opt/data  --volume=$PWD/logs:/opt/logs  --rm --volume=$PWD/timezone:/etc/timezone  hub.ivnd.com.vn/sas-reservation-service:1.29.3
 /etc/timezone
+
+docker run -d -p 3005:3000 -v /home/sas/sas-homefood-e-menu/config/config.js:/opt/configs/config.js --name sas-homefood-e-menu-1.0.1 harbor.vndirect.com.vn/uat/sas-homefood-e-menu:1.0.1 
+
+docker run --detach --name=sas-vuejs-cms-1.7.9 -p 3000:3000   -v /home/sas/sas-vuejs-cms/config:/opt/configs/config.js -v /home/sas/sas-vuejs-cms/logs:/root/.npm/_logs/  --rm -v=$PWD/timezone:/etc/timezone hub. ivnd.com.vn/sas-vuejs-cms:1.7.9
+
+docker run --detach --name=sas-vuejs-order-1.46.1 -p 3000:3000 --net bridge   -v /home/sas/sas-vuejs-order/config:/opt/configs/ -v /home/sas/sas-vuejs-order/logs:/root/.npm/_logs/  --rm -v=$PWD/timezone:/etc/timezone hub. ivnd.com.vn/sas-vuejs-order:1.46.1
+
+/usr/bin/docker create \
+--net host \
+-m 0b \
+-p 3000:3000 \
+ \
+-v /home/sas/sas-vuejs-cms/config:/opt/configs/ \
+ \
+-v /home/sas/sas-vuejs-cms/logs:/root/.npm/_logs/ \
+ \
+--name sas-vuejs-cms-1.7.8 \
+hub.ivnd.com.vn/sas-vuejs-cms:1.7.8 \
+Asia/Ho_Chi_Minh
 
 vào thư mục này /usr/local/bin
 xóa file
@@ -396,3 +415,44 @@ nginx proxy có IP là 10.200.208.53/202.160.124.198
 jira xin thông firewall https://vndirect.atlassian.net/servicedesk/customer/portal/3/ITSUPPORT-17558?created=true
 10.26.53.113 -- cart
 10.26.53.125 -- inventory
+
+
+Check the current setting in MySQL:
+mysql> show variables like 'expire_logs_days';
+
+Then, change the global setting:
+mysql> set global expire_logs_days=1;
+
+After that, update the my.cnf file to make the setting permanent:
+sudo vim /etc/my.cnf
+expire_logs_days = 1
+
+Finally, flush the logs for the changes to take effect:
+mysql> flush binary logs;
+
+./zookeeper-server-start.sh -daemon ../config/zookeeper.properties
+tail -f /var/log/mysqld.log
+
+
+jack reacher
+ctrl + H search text
+ctlr + R search usage view by name(ex: search class theo tên, search file theo tên, search symbol theo tên)
+
+SELECT *
+FROM dgo_db.investment_planning t
+
+WHERE not JSON_CONTAINS(
+              target_portfolio -> '$.items',
+              '{"symbol": "VNDBF", "rate": 100}');
+
+UPDATE investment_planning a
+    INNER JOIN investment_planning b ON a.id = b.id
+SET a.maturity_date = DATE_ADD(b.created, INTERVAL
+    json_extract(b.target_attribute, json_unquote(replace(json_search(b.target_attribute, 'one' , 'INVESTMENT_PERIOD'), 'code', 'value'))) YEAR)
+ where a.status in( 'ACTIVE','PENDING', 'DRAFT', 'WAITING');
+value có quote để hiển thị
+value ko quote dùng để xử lý sql
+
+nếu có task tích sản không đặt lệnh mua, e check giúp a 2 thông tin nhé :
+- 1 là tiền có > = 500K hay không
+- sell status có ở trạng thái null, marturity, withdraw hay không -> nếu không ở những trạng thái này thì ko đặt dc lệnh mua nữa. Vì ngoài những trạng thái này sẽ có trạng thái = OVERDUE là hết hạn tích sản và SETTLEMENT là đang thực heienj tất toán - hai trạng thái này ko cho phép tích sản tiếp
